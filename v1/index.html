@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Platonic Representation Hypothesis on World Models</title>
+    <meta
+      name="description"
+      content="Project page for the NeurIPS 2026 paper: Platonic Representation Hypothesis on World Models."
+    >
+    <meta property="og:title" content="Platonic Representation Hypothesis on World Models">
+    <meta
+      property="og:description"
+      content="A study of whether action-conditioned world models trained with different visual priors develop shared latent transition structure."
+    >
+    <meta property="og:image" content="../assets/prh-wm/platonic-hypothesis.jpg">
+    <meta property="og:type" content="website">
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2317130f'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23fffaf2'%3EPRH%3C/text%3E%3C/svg%3E"
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650;8..60,750&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="variant-page variant-1">
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="mark" href="#top" aria-label="Back to top">
+        <span class="mark-glyph">PRH</span>
+        <span class="mark-text">World Models</span>
+      </a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#claim">Claim</a>
+        <a href="#setup">Setup</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#limitations">Scope</a>
+      </nav>
+      <a class="nav-action" href="../assets/prh-wm/prh-wm-neurips2026.pdf">PDF</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="paper-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="../assets/prh-wm/platonic-hypothesis.jpg" alt="">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="venue">NeurIPS 2026 submission</p>
+          <h1 id="paper-title">World models converge toward Platonic-like representations.</h1>
+          <p class="hero-copy">
+            We test whether DINO-WM predictors built on different frozen visual encoders
+            develop comparable latent geometry after learning the same action-conditioned
+            dynamics.
+          </p>
+          <div class="hero-actions" aria-label="Project links">
+            <a class="button primary" href="../assets/prh-wm/prh-wm-neurips2026.pdf">Read the paper</a>
+            <a class="button secondary" href="https://github.com/sellerbubble/dino_wm">View code</a>
+          </div>
+        </div>
+        <aside class="hero-stats" aria-label="Study overview">
+          <div>
+            <span class="stat-value">5</span>
+            <span class="stat-label">control environments</span>
+          </div>
+          <div>
+            <span class="stat-value">7</span>
+            <span class="stat-label">visual priors</span>
+          </div>
+          <div>
+            <span class="stat-value">2</span>
+            <span class="stat-label">alignment probes</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="claim" class="section question-section">
+        <div class="section-kicker">Why It Matters</div>
+        <div class="split">
+          <div>
+            <h2>A concrete way to study representation alignment</h2>
+          </div>
+          <div class="prose">
+            <p>
+              If different world models learn increasingly similar latent geometry, then
+              their internal states may be comparable in a meaningful way. This makes
+              representation alignment a concrete object of study, rather than only a
+              metaphor about similar understanding.
+            </p>
+            <p>
+              The page keeps the argument simple: different frozen encoders feed the same
+              DINO-WM training setup, and we ask whether the predictor states move toward
+              a shared transition-compatible structure.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="setup" class="section method-section" aria-labelledby="setup-title">
+        <div class="section-kicker">Setup</div>
+        <h2 id="setup-title">Train the same world model through different frozen visual priors</h2>
+        <div class="diagram-stack">
+          <figure class="diagram-card">
+            <img
+              src="../assets/prh-wm/setup-generated.png"
+              alt="Conceptual diagram of frozen visual priors feeding a shared DINO-WM predictor."
+            >
+            <figcaption>
+              DINOv2, SigLIP, MAE, and ResNet encoders create different input feature
+              spaces. The predictor architecture and transition objective are held fixed,
+              so the comparison focuses on the learned predictor hidden states.
+            </figcaption>
+          </figure>
+          <figure class="diagram-card">
+            <img
+              src="../assets/prh-wm/mknn-method.svg"
+              alt="Diagram showing mutual k-nearest-neighbor alignment between two predictor hidden-state spaces."
+            >
+            <figcaption>
+              m-kNN compares whether two predictors assign the same validation states to
+              similar local neighborhoods. Higher overlap means stronger preservation of
+              local latent topology.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="figure-band" aria-labelledby="tasks-title">
+        <div class="figure-copy">
+          <div class="section-kicker">Benchmark</div>
+          <h2 id="tasks-title">Five environments, one transition-learning lens</h2>
+          <p>
+            The evaluation spans navigation, contact-rich manipulation, and deformable
+            dynamics: PointMaze, PushT, Wall, Granular, and Rope.
+          </p>
+        </div>
+        <figure>
+          <img src="../assets/prh-wm/tasks.png" alt="Five DINO-WM evaluation environments.">
+        </figure>
+      </section>
+
+      <section id="evidence" class="section evidence-section" aria-labelledby="evidence-title">
+        <div class="section-kicker">Evidence</div>
+        <h2 id="evidence-title">The core signal is alignment, then the encoder-bias check</h2>
+        <div class="evidence-stack">
+          <article class="evidence-card">
+            <div class="evidence-copy">
+              <h3>Predictor Geometry Aligns</h3>
+              <p>
+                Across training, ViT-based DINO-WM predictors show stronger local
+                neighborhood alignment than the ResNet baseline.
+              </p>
+            </div>
+            <figure>
+              <img src="../assets/prh-wm/knn-trends.png" alt="m-kNN similarity trends across environments.">
+              <figcaption>
+                ViT-based predictors exhibit stronger local-neighborhood alignment than the
+                ResNet baseline, with SigLIP and MAE often showing progressive movement
+                toward the reference predictor.
+              </figcaption>
+            </figure>
+          </article>
+          <article class="evidence-card">
+            <div class="evidence-copy">
+              <h3>Not Just Encoder Inheritance</h3>
+              <p>
+                Figure 5 and Figure 6 address the main alternative explanation: maybe the
+                predictors only inherit or recover frozen encoder geometry.
+              </p>
+            </div>
+            <figure>
+              <img src="../assets/prh-wm/encoder-vs-predictor.png" alt="Figure 5: comparison of encoder-space and predictor-space alignment.">
+              <img src="../assets/prh-wm/within-model-encoder-predictor.png" alt="Figure 6: within-model encoder-predictor geometry analysis.">
+              <figcaption>
+                Figure 5 separates encoder-space similarity from predictor-space recovery.
+                Figure 6 checks whether predictors merely drift back toward their own
+                encoders. Together, they support the interpretation that training
+                reorganizes inherited visual features into transition-compatible hidden
+                states.
+              </figcaption>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section class="section findings-section" aria-labelledby="findings-title">
+        <div class="section-kicker">Main Findings</div>
+        <h2 id="findings-title">What the paper argues</h2>
+        <div class="findings-grid">
+          <article>
+            <h3>Predictive consistency acts as an alignment pressure</h3>
+            <p>
+              Under a shared transition objective, strong ViT-based predictors become
+              more geometrically compatible in hidden-state space.
+            </p>
+          </article>
+          <article>
+            <h3>The alignment is not just inherited</h3>
+            <p>
+              Encoder-control analyses show that predictor states transform frozen visual
+              features and later recover cross-model alignment in predictor space.
+            </p>
+          </article>
+          <article>
+            <h3>Architecture sets the boundary</h3>
+            <p>
+              ResNet remains separated from ViT-based predictors, suggesting that
+              Platonic-like convergence depends on architectural and interface
+              compatibility.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="limitations" class="section limitations-section">
+        <div class="section-kicker">Scope</div>
+        <div class="split">
+          <h2>A conservative reading of Platonic-style alignment</h2>
+          <div class="prose">
+            <p>
+              This page argues for a convergence tendency, not a universal law. The
+              evidence is strongest for ViT-based world-model predictors trained under
+              comparable visual-action prediction settings.
+            </p>
+            <p>
+              ResNet remains a boundary case rather than an exception to hide. Stitching
+              provides a secondary functional check, but the main argument here stays
+              centered on predictor geometry and encoder-inheritance controls.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="paper" class="section citation-section" aria-labelledby="citation-title">
+        <div>
+          <div class="section-kicker">Paper</div>
+          <h2 id="citation-title">Read and cite the work</h2>
+          <div class="paper-links" aria-label="Paper resources">
+            <a class="button paper-button" href="../assets/prh-wm/prh-wm-neurips2026.pdf">PDF</a>
+            <a class="button paper-button" href="https://github.com/sellerbubble/dino_wm">Code</a>
+          </div>
+        </div>
+        <div class="citation-box">
+          <pre><code id="citation">@misc{prhwm2026,
+  title  = {Platonic Representation Hypothesis on World Models},
+  author = {Anonymous Author(s)},
+  year   = {2026},
+  note   = {NeurIPS 2026 submission}
+}</code></pre>
+          <button class="copy-button" type="button" data-copy-target="citation">Copy</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Project page for the NeurIPS 2026 submission.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

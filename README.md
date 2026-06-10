@@ -9,6 +9,22 @@ Site URL:
 https://sellerbubble.github.io/prh-wm-project-page/
 ```
 
+Variant overview:
+
+```text
+https://sellerbubble.github.io/prh-wm-project-page/variants/
+```
+
+Visual versions:
+
+```text
+https://sellerbubble.github.io/prh-wm-project-page/v1/
+https://sellerbubble.github.io/prh-wm-project-page/v2/
+https://sellerbubble.github.io/prh-wm-project-page/v3/
+https://sellerbubble.github.io/prh-wm-project-page/v4/
+https://sellerbubble.github.io/prh-wm-project-page/v5/
+```
+
 ## Local Preview
 
 Open `index.html` directly in a browser, or serve the repository root:

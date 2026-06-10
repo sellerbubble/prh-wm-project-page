@@ -1,0 +1,130 @@
+@import url("../styles.css");
+
+:root {
+  --ink: #111827;
+  --muted: #4b5563;
+  --paper: #f8fafc;
+  --paper-deep: #e5e7eb;
+  --line: rgba(17, 24, 39, 0.14);
+  --oxide: #1d4ed8;
+  --white: #ffffff;
+  --shadow: none;
+}
+
+body {
+  background: var(--paper);
+}
+
+.site-header {
+  background: rgba(248, 250, 252, 0.92);
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+
+.mark-glyph,
+.nav-action {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.nav-links {
+  color: var(--muted);
+}
+
+.hero {
+  min-height: 88vh;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  padding-top: 110px;
+  color: var(--ink);
+  background: var(--white);
+}
+
+.hero-media {
+  left: auto;
+  width: min(42vw, 620px);
+  opacity: 0.22;
+}
+
+.hero-media img {
+  filter: grayscale(1) contrast(1.02);
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.92) 54%, rgba(255, 255, 255, 0.52) 100%);
+}
+
+.hero .venue {
+  color: var(--oxide);
+}
+
+h1 {
+  max-width: 900px;
+  font-size: clamp(3rem, 6.4vw, 6rem);
+  line-height: 1;
+}
+
+h2 {
+  font-size: clamp(2rem, 4.2vw, 4.8rem);
+  line-height: 1.02;
+}
+
+.hero-copy {
+  max-width: 680px;
+  color: var(--muted);
+}
+
+.button.primary,
+.paper-button,
+.copy-button {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.button.secondary {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.hero-stats {
+  background: #f9fafb;
+  color: var(--ink);
+  border-color: var(--line);
+  backdrop-filter: none;
+}
+
+.hero-stats div {
+  border-color: var(--line);
+}
+
+.stat-label {
+  color: var(--muted);
+}
+
+.method-section,
+.findings-section,
+.footer {
+  background: #111827;
+}
+
+.diagram-card,
+.evidence-card,
+.figure-band figure,
+.citation-box {
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.evidence-card {
+  grid-template-columns: minmax(240px, 0.3fr) minmax(0, 0.7fr);
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    width: 100%;
+  }
+}
