@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img">
+  
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#284d5c"/>
+      </marker>
+      <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#24180c" flood-opacity="0.14"/>
+      </filter>
+      <style>
+        .tiny { font-family: IBM Plex Sans, Arial, sans-serif; font-size: 13px; fill: #6f665d; }
+        .mono { font-family: SFMono-Regular, Consolas, monospace; font-size: 14px; fill: #17130f; }
+      </style>
+    </defs>
+    
+  <rect width="1200" height="560" fill="#f5f0e7"/>
+  <path d="M0 84 H1200 M0 312 H1200" stroke="rgba(23,19,15,0.08)" stroke-width="1"/>
+  <text x="600" y="54" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="26" font-weight="750" fill="#17130f">Mutual kNN alignment compares local neighborhoods</text>
+  <text x="600" y="84" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="15" font-weight="500" fill="#6f665d">For the same validation states, two predictors are aligned if they choose many of the same nearest neighbors.</text>
+  <rect x="52" y="132" width="262" height="250" rx="8" fill="#fffaf2" stroke="#17130f" stroke-width="1.4"/>
+<rect x="52" y="132" width="8" height="250" rx="4" fill="#a6422d"/>
+<text x="183.0" y="170" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17130f">Predictor A states</text>
+<text x="183.0" y="198" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="14" font-weight="500" fill="#6f665d">H_A from model A</text>
+  <rect x="360" y="132" width="262" height="250" rx="8" fill="#fffaf2" stroke="#17130f" stroke-width="1.4"/>
+<rect x="360" y="132" width="8" height="250" rx="4" fill="#52684d"/>
+<text x="491.0" y="170" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17130f">Predictor B states</text>
+<text x="491.0" y="198" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="14" font-weight="500" fill="#6f665d">H_B from model B</text>
+  <rect x="716" y="152" width="174" height="90" rx="8" fill="#fffaf2" stroke="#17130f" stroke-width="1.4"/>
+<rect x="716" y="152" width="8" height="90" rx="4" fill="#a6422d"/>
+<text x="803.0" y="190" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17130f">kNN in A</text>
+<text x="803.0" y="218" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="14" font-weight="500" fill="#6f665d">N_k(x_i^A)</text>
+  <rect x="716" y="282" width="174" height="90" rx="8" fill="#fffaf2" stroke="#17130f" stroke-width="1.4"/>
+<rect x="716" y="282" width="8" height="90" rx="4" fill="#52684d"/>
+<text x="803.0" y="320" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17130f">kNN in B</text>
+<text x="803.0" y="348" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="14" font-weight="500" fill="#6f665d">N_k(x_i^B)</text>
+  <rect x="966" y="206" width="168" height="112" rx="8" fill="#17130f" stroke="#17130f" stroke-width="1.4"/>
+<rect x="966" y="206" width="8" height="112" rx="4" fill="#e79a63"/>
+<text x="1050.0" y="244" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17130f">Overlap</text>
+<text x="1050.0" y="272" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="14" font-weight="500" fill="#6f665d">|N_A ∩ N_B| / k</text>
+  <text x="1050" y="256" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16" font-weight="700" fill="#fffaf2">Average over</text>
+  <text x="1050" y="282" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="16" font-weight="700" fill="#fffaf2">all paired states</text>
+  <circle cx="145" cy="218" r="8" fill="#a6422d" opacity="0.86"/>
+  <circle cx="200" cy="190" r="8" fill="#a6422d" opacity="0.86"/>
+  <circle cx="236" cy="238" r="8" fill="#a6422d" opacity="0.86"/>
+  <circle cx="176" cy="276" r="8" fill="#a6422d" opacity="0.86"/>
+  <circle cx="260" cy="300" r="8" fill="#a6422d" opacity="0.86"/>
+  <circle cx="118" cy="292" r="8" fill="#a6422d" opacity="0.86"/>
+  <circle cx="165" cy="214" r="8" fill="#52684d" opacity="0.86"/>
+  <circle cx="226" cy="202" r="8" fill="#52684d" opacity="0.86"/>
+  <circle cx="250" cy="260" r="8" fill="#52684d" opacity="0.86"/>
+  <circle cx="178" cy="302" r="8" fill="#52684d" opacity="0.86"/>
+  <circle cx="284" cy="300" r="8" fill="#52684d" opacity="0.86"/>
+  <circle cx="120" cy="270" r="8" fill="#52684d" opacity="0.86"/>
+  <circle cx="200" cy="190" r="13" fill="none" stroke="#17130f" stroke-width="2.4"/>
+  <circle cx="226" cy="202" r="13" fill="none" stroke="#17130f" stroke-width="2.4"/>
+  <path d="M200 190 L145 218 L236 238 L176 276" fill="none" stroke="#a6422d" stroke-width="2" opacity="0.55"/>
+  <path d="M226 202 L165 214 L250 260 L178 302" fill="none" stroke="#52684d" stroke-width="2" opacity="0.55"/>
+  <text x="184" y="350" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="13" font-weight="500" fill="#6f665d">same state i</text>
+  <text x="492" y="350" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="13" font-weight="500" fill="#6f665d">same state i</text>
+  <path d="M 314 256 L 360 256" fill="none" stroke="#6f665d" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arrow)" stroke-dasharray="7 7"/>
+  <path d="M 622 218 L 716 197" fill="none" stroke="#284d5c" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M 622 292 L 716 327" fill="none" stroke="#284d5c" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M 890 197 L 966 246" fill="none" stroke="#284d5c" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <path d="M 890 327 L 966 280" fill="none" stroke="#284d5c" stroke-width="2.6" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <text x="600" y="468" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17130f">m-kNN(A,B) = 1/N Σ_i |N_k(x_i^A) ∩ N_k(x_i^B)| / k</text>
+  <text x="600" y="506" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="15" font-weight="500" fill="#6f665d">High score: the two hidden spaces preserve similar local topology for matched world states.</text>
+</svg>
