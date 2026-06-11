@@ -18,6 +18,7 @@ https://sellerbubble.github.io/prh-wm-project-page/variants/
 Visual versions:
 
 ```text
+https://sellerbubble.github.io/prh-wm-project-page/simple/
 https://sellerbubble.github.io/prh-wm-project-page/v1/
 https://sellerbubble.github.io/prh-wm-project-page/v2/
 https://sellerbubble.github.io/prh-wm-project-page/v3/

@@ -1,0 +1,383 @@
+:root {
+  --bg: #f6f5f1;
+  --ink: #111111;
+  --muted: #68645f;
+  --line: #d8d4cc;
+  --soft-line: #e5e1da;
+  --panel: #fbfaf7;
+  --accent: #111111;
+  --mono: "SFMono-Regular", "Roboto Mono", "Cascadia Mono", Consolas, monospace;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: var(--sans);
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.site-header {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto;
+  gap: 28px;
+  align-items: baseline;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 44px 32px 30px;
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.6vw, 2.15rem);
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  font-family: var(--mono);
+  font-size: 0.92rem;
+}
+
+nav a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+}
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px 72px;
+}
+
+.hero {
+  max-width: 760px;
+  padding: clamp(42px, 7vw, 86px) 0 38px 32px;
+}
+
+.meta,
+.section-label {
+  margin: 0 0 14px;
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: clamp(3.1rem, 7.2vw, 6rem);
+  line-height: 0.98;
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  line-height: 1.04;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-family: var(--mono);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.lead {
+  max-width: 680px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.actions a,
+.copy-button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  padding: 9px 13px;
+  border: 1px solid var(--ink);
+  background: var(--panel);
+  color: var(--ink);
+  font: 700 0.92rem var(--mono);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.actions a:first-child {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 760px;
+  margin-left: 32px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.metrics div {
+  padding: 20px 22px;
+  border-right: 1px solid var(--line);
+}
+
+.metrics div:last-child {
+  border-right: 0;
+}
+
+.metrics strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+.metrics span {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 760px);
+  gap: 0;
+  padding-top: 34px;
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -34px;
+  left: 16px;
+  width: 1px;
+  background: var(--soft-line);
+}
+
+.entry:last-of-type::before {
+  bottom: 44px;
+}
+
+.marker {
+  position: relative;
+  z-index: 1;
+  width: 9px;
+  height: 9px;
+  margin: 48px auto 0;
+  border-radius: 999px;
+  background: var(--ink);
+}
+
+article {
+  padding: 38px 0 22px 28px;
+}
+
+article p {
+  max-width: 68ch;
+  color: var(--muted);
+}
+
+figure {
+  margin: 26px 0 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+figure + figure {
+  margin-top: 20px;
+}
+
+figure img {
+  width: 100%;
+  background: #fff;
+}
+
+figure img + img {
+  margin-top: 12px;
+}
+
+figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.evidence-item {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.evidence-item + .evidence-item {
+  margin-top: 32px;
+}
+
+.findings {
+  display: grid;
+  gap: 0;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.findings li {
+  padding: 18px 20px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.findings li:last-child {
+  border-bottom: 0;
+}
+
+.findings strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.92rem;
+}
+
+.inline-actions {
+  margin: 2px 0 18px;
+}
+
+pre {
+  margin: 20px 0 12px;
+  padding: 16px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  font: 0.86rem/1.45 var(--mono);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 30px 32px 44px 64px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    grid-template-columns: 1fr;
+    padding: 28px 18px 18px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  main {
+    padding: 0 18px 56px;
+  }
+
+  .hero {
+    padding-left: 0;
+  }
+
+  h1 {
+    font-size: clamp(2.65rem, 12vw, 4.1rem);
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+
+  .metrics div {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .metrics div:last-child {
+    border-bottom: 0;
+  }
+
+  .entry {
+    grid-template-columns: 18px minmax(0, 1fr);
+  }
+
+  .entry::before {
+    left: 8px;
+  }
+
+  .marker {
+    width: 7px;
+    height: 7px;
+  }
+
+  article {
+    padding-left: 16px;
+  }
+
+  figure {
+    padding: 8px;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 28px 18px 40px 34px;
+  }
+}
